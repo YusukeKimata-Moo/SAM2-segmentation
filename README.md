@@ -13,8 +13,8 @@ ref: Notebook in original GitHub repository (https://github.com/facebookresearch
    
 3. Open the Notebook, and run each cell sequentially (specify the directory names for input and output in the corresponding cell).<br>
    You can choose two types of output.<br>
-     i. Mask image in grayscale<br>
-     ii. Overlayed Masks on Original Images<br>
+      i. Mask image in grayscale<br>
+      ii. Overlayed Masks on Original Images<br>
 
 ![Example](images/Example.gif)
 *Example of segmentation by SAM2.*

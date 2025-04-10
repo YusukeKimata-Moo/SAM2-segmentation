@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Directory
+input_img/
+output_img_mask/
+output_img_merged/

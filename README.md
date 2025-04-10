@@ -13,6 +13,7 @@ ref: Notebook in *Meta Research* repository (https://github.com/facebookresearch
    
 3. Open the Notebook, and set the runtime type to GPU.<br>
    Then, run each cell sequentially (specify the directory names for input and output in the corresponding cell).<br>
+   
    You can choose two types of output.<br>
       i. Mask image in grayscale<br>
       ii. Overlayed Masks on Original Images<br>

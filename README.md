@@ -18,6 +18,6 @@ ref: Notebook in *Meta Research* repository (https://github.com/facebookresearch
       i. Mask image in grayscale<br>
       ii. Overlayed Masks on Original Images<br>
 
-![Example](images/Example.gif)
+![Example](images/Example.gif)<br>
 *Example of segmentation by SAM2 (Arabidopsis zygote)*
    

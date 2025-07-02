@@ -19,5 +19,5 @@ ref: Notebook in *Meta Research* repository (https://github.com/facebookresearch
       ii. Overlayed Masks on Original Images<br>
 
 ![Example](images/Example.gif)
-*Example of segmentation by SAM2*
+*Example of segmentation by SAM2 (Arabidopsis zygote)*
    

@@ -20,4 +20,8 @@ ref: Notebook in *Meta Research* repository (https://github.com/facebookresearch
 
 ![Example](images/Example.gif)<br>
 *Example of segmentation by SAM2 (Arabidopsis zygote)*
+
+## Latest Update
+### **Revision for flexible reference frame selection (2025/09/22)**
+For initial segmentation, you can select not only the first frame but also any other frame as the reference.
    

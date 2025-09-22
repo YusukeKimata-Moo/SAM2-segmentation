@@ -25,3 +25,10 @@ ref: Notebook in *Meta Research* repository (https://github.com/facebookresearch
 ### **Revision for flexible reference frame selection (2025/09/22)**
 For initial segmentation, you can select not only the first frame but also any other frame as the reference.
    
+## Citation
+- SAM 2: Segment Anything in Images and Videos
+  Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, Ronghang Hu, Chaitanya Ryali, Tengyu Ma, Haitham Khedr, Roman Rädle, Chloe Rolland, Laura Gustafson, Eric Mintun, Junting Pan, Kalyan Vasudev Alwala, Nicolas Carion, Chao-Yuan Wu, Ross Girshick, Piotr Dollár, Christoph Feichtenhofer
+  arXiv:2408.00714,(2924), https://arxiv.org/abs/2408.00714
+- KymoTip: High-throughput Characterization of Tip-growth Dynamics in Plant Cells
+  Zichen Kang, Yusuke Kimata, Tomonobu Nonoyama, Toru Ikeuchi, Kazuyuki Kuchitsu, Satoru Tsugawa, Minako Ueda
+  bioRxiv 2025.06.27.661917, (2025), https://doi.org/10.1101/2025.06.27.661917

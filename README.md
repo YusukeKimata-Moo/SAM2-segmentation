@@ -26,9 +26,9 @@ ref: Notebook in *Meta Research* repository (https://github.com/facebookresearch
 For initial segmentation, you can select not only the first frame but also any other frame as the reference.
    
 ## Citation
-- SAM 2: Segment Anything in Images and Videos</n>
-  Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, Ronghang Hu, Chaitanya Ryali, Tengyu Ma, Haitham Khedr, Roman Rädle, Chloe Rolland, Laura Gustafson, Eric Mintun, Junting Pan, Kalyan Vasudev Alwala, Nicolas Carion, Chao-Yuan Wu, Ross Girshick, Piotr Dollár, Christoph Feichtenhofer</n>
+- SAM 2: Segment Anything in Images and Videos<br>
+  Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, Ronghang Hu, Chaitanya Ryali, Tengyu Ma, Haitham Khedr, Roman Rädle, Chloe Rolland, Laura Gustafson, Eric Mintun, Junting Pan, Kalyan Vasudev Alwala, Nicolas Carion, Chao-Yuan Wu, Ross Girshick, Piotr Dollár, Christoph Feichtenhofer<br>
   arXiv:2408.00714,(2924), https://arxiv.org/abs/2408.00714
-- KymoTip: High-throughput Characterization of Tip-growth Dynamics in Plant Cells</n>
-  Zichen Kang, Yusuke Kimata, Tomonobu Nonoyama, Toru Ikeuchi, Kazuyuki Kuchitsu, Satoru Tsugawa, Minako Ueda</n>
+- KymoTip: High-throughput Characterization of Tip-growth Dynamics in Plant Cells<br>
+  Zichen Kang, Yusuke Kimata, Tomonobu Nonoyama, Toru Ikeuchi, Kazuyuki Kuchitsu, Satoru Tsugawa, Minako Ueda<br>
   bioRxiv 2025.06.27.661917, (2025), https://doi.org/10.1101/2025.06.27.661917

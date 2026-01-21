@@ -31,4 +31,4 @@ For initial segmentation, you can select not only the first frame but also any o
   _arXiv_: 2408.00714, (2024), https://arxiv.org/abs/2408.00714
 - KymoTip: High-throughput Characterization of Tip-growth Dynamics in Plant Cells<br>
   Zichen Kang, Yusuke Kimata, Tomonobu Nonoyama, Toru Ikeuchi, Kazuyuki Kuchitsu, Satoru Tsugawa, Minako Ueda<br>
-  _Plant Journal_: in press, (2026), [https://doi.org/10.1101/2025.06.27.661917](https://doi.org/10.1111/tpj.70691)
+  _Plant Journal_ 125:e70691, (2026), [https://doi.org/10.1101/2025.06.27.661917](https://doi.org/10.1111/tpj.70691)

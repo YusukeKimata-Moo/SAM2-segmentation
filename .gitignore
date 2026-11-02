@@ -178,3 +178,28 @@ input_img/
 output_img_mask/
 output_img_merged/
 images/
+
+# Local fine-tuning data and generated artifacts
+finetune_data/
+finetune_runs/
+checkpoints/
+*.pt
+*.pth
+
+# Local source images and segmentation results
+/*_sample*/
+
+# Locally generated Colab test bundles and their preparation script
+/colab_test_*/
+/colab_test_*.zip
+/tools/prepare_colab_test.py
+
+# Incomplete downloads, backups, and temporary files
+*.crdownload
+*.part
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini

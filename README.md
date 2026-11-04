@@ -110,6 +110,12 @@ In **Prepare data**, review these settings before continuing:
 | `LEARNING_RATE` | How strongly the weights change during learning. The default is `5e-6`, a starting point to compare on your validation data. |
 | `BATCH_SIZE` | Images processed in one training step. Start with the default, `1`. |
 | `FREEZE_IMAGE_ENCODER` | Keep `True` to retain pretrained image feature extraction while adapting the segmentation. Setting it to `False` also trains that part of the model and increases GPU memory requirements. |
+| `TRAIN_AUGMENT` | `True` by default. Set to `False` to train on original frames only. |
+| `TRAIN_AUGMENTED_COPIES` | Extra augmented views per original frame in each epoch; default `1`. Set to `0` for originals only. |
+| `TRAIN_AUGMENT_SCOPE` | `'frame'` (default) samples independently for each frame. `'video'` shares the operation and angle/factor across all frames of a video for each copy in an epoch. |
+| `TRAIN_HFLIP` / `TRAIN_VFLIP` | Enable horizontal / vertical flips. Both default to `True`; set either to `False` if that orientation is unsuitable for your images. |
+| `TRAIN_ROTATION_DEGREES` | Default `15`: sample a rotation angle uniformly from -15 to +15 degrees. Set to `0` to disable rotation. |
+| `TRAIN_BRIGHTNESS_RANGE` | Default `None` disables brightness. Set two multiplicative factors, for example `(0.9, 1.1)`, to sample uniformly from slightly darker to slightly brighter. Brightness affects images only. |
 | `SPLIT_RATIOS` / `SEED` | Video split proportions and the seed used to reproduce the split. Keep them unchanged when comparing model settings on the same dataset. |
 | `CACHE_DATA` | Set to `True` to copy the input data to the Colab runtime for faster repeated reads. The initial copy can take time; the files on Drive are preserved. |
 
@@ -121,6 +127,46 @@ EPOCHS = 2
 BATCH_SIZE = 1
 FREEZE_IMAGE_ENCODER = True
 ```
+
+#### Training augmentation
+
+With the defaults, each epoch includes every original training frame once and one extra augmented view. Each extra view selects **exactly one** enabled operation with equal probability; operations are not combined. With horizontal flip, vertical flip, and rotation enabled, each has a one-third chance. Enabling brightness as well gives each of the four a one-quarter chance.
+
+Geometry is applied to the image and mask together before the existing 1024-square resize and normalization. Rotation uses bilinear image interpolation and nearest-neighbor mask interpolation, expands the canvas to retain the source field, and fills new pixels with black/background. This keeps the same sampled rotation for every frame in video scope without frame-specific fallback. Source files, validation images, and test videos stay unchanged.
+
+Choose the settings in **Prepare data** before running the later cells. For frame-specific augmentation with brightness enabled:
+
+```python
+TRAIN_AUGMENT = True
+TRAIN_AUGMENTED_COPIES = 1
+TRAIN_AUGMENT_SCOPE = 'frame'
+TRAIN_HFLIP = True
+TRAIN_VFLIP = True
+TRAIN_ROTATION_DEGREES = 15
+TRAIN_BRIGHTNESS_RANGE = (0.9, 1.1)
+```
+
+For two extra views with consistent augmentation across each video's frames:
+
+```python
+TRAIN_AUGMENT = True
+TRAIN_AUGMENTED_COPIES = 2
+TRAIN_AUGMENT_SCOPE = 'video'
+TRAIN_HFLIP = True
+TRAIN_VFLIP = True
+TRAIN_ROTATION_DEGREES = 15
+TRAIN_BRIGHTNESS_RANGE = None
+```
+
+To disable all training augmentation, set:
+
+```python
+TRAIN_AUGMENT = False
+```
+
+Setting copies to `0`, or turning off both flips, rotation (`0`), and brightness (`None`), also leaves originals only. Draws are reproducible from `SEED`, epoch, frame path (frame scope) or video ID (video scope), and copy number; shuffle/access order does not affect them. Each new epoch draws again. Video scope controls transform consistency; training still processes individual frames without learning temporal memory.
+
+The notebook prints the original training frame count and the samples per epoch. With augmentation active, `N` original frames and `C` copies produce `N * (1 + C)` samples. At `BATCH_SIZE = 1`, the default one extra copy doubles the steps per epoch; two copies triple them. All original and augmented views are shuffled together. More copies therefore increase training time per epoch. The augmentation settings are saved in `run_config.json` and checkpoint metadata.
 
 ### 4. Train and evaluate
 
